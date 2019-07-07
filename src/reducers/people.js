@@ -1,9 +1,11 @@
-import { FETCH_PEOPLE, FETCH_PERSON } from './../actions/types';
+import { FETCH_PEOPLE, NEXT_PAGE, FETCH_PERSON } from './../actions/types';
 
 const initialState = {
   count: 0,
+  loading: false,
+  page: 1,
   people: [],
-  person: {}
+  person: {},
 };
 
 const people = (state = initialState, action) => {
@@ -11,14 +13,21 @@ const people = (state = initialState, action) => {
     case FETCH_PEOPLE:
       return {
         ...state,
-        count: action.payload.count,
-        people: action.payload.results
+        count: action.payload.count || state.count,
+        people: [...state.people, ...(action.payload.results || [])],
+        loading: !action.completed,
+      };
+
+    case NEXT_PAGE:
+      return {
+        ...state,
+        page: action.payload,
       };
 
     case FETCH_PERSON:
       return {
         ...state,
-        person: action.payload
+        person: action.payload,
       };
 
     default:
