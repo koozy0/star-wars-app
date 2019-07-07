@@ -2,6 +2,7 @@ import { FETCH_PEOPLE, FETCH_PERSON, NEXT_PAGE } from './types';
 import swapi from '../services/swapi';
 
 export const fetchPeople = page => async dispatch => {
+  // TODO: Separate to 2 types FETCH_PEOPLE_START and FETCH_PEOPLE_END
   dispatch({
     type: FETCH_PEOPLE,
     payload: {},
@@ -25,6 +26,7 @@ export const nextPage = page => dispatch => {
 };
 
 export const fetchPerson = name => async dispatch => {
+  // TODO: Separate to 2 types FETCH_PERSON_START and FETCH_PERSON_END
   dispatch({
     type: FETCH_PERSON,
     payload: {},
