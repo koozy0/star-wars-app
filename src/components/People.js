@@ -51,7 +51,10 @@ class People extends Component {
           <li style={STYLES.listItem}>Hair color: {person.hair_color}</li>
           <li style={STYLES.listItem}>Skin color: {person.skin_color}</li>
           <li style={STYLES.listItem}>
-            <NavLink to={`/${getUrlFriendlyPersonName(person.name)}`}>
+            <NavLink
+              to={`/${getUrlFriendlyPersonName(person.name)}`}
+              style={{ fontSize: '24px', lineHeight: '72px' }}
+            >
               More details
             </NavLink>
           </li>
