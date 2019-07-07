@@ -1,3 +1,10 @@
+## Instructions
+
+If you have forked/cloned this repository, change directory into the repository, then run the following commands in your terminal to start the application.
+
+- `npm install`
+- `npm start`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
