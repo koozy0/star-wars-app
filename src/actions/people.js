@@ -25,6 +25,11 @@ export const nextPage = page => dispatch => {
 };
 
 export const fetchPerson = name => async dispatch => {
+  dispatch({
+    type: FETCH_PERSON,
+    payload: {},
+  });
+
   const data = await swapi.getPerson(name);
   const person = data.results[0];
   const { films, homeworld, species, starships, vehicles } = person;
@@ -59,6 +64,5 @@ export const fetchPerson = name => async dispatch => {
   dispatch({
     type: FETCH_PERSON,
     payload: updatedPerson,
-    completed: true,
   });
 };
