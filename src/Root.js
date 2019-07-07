@@ -6,23 +6,28 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header';
 import People from './components/People';
 import Person from './components/Person';
+import ScrollToTop from './components/ScrollToTop';
 
-const Root = ({ store }) => (
-  <Provider store={store}>
-    <Router>
-      <Header />
+const Root = ({ store }) => {
+  return (
+    <Provider store={store}>
+      <Router>
+        <ScrollToTop>
+          <Header />
 
-      <div style={STYLES.container}>
-        <div style={STYLES.contentWrapper}>
-          <div style={{ ...STYLES.fade, ...STYLES.fadeTop }} />
-          <Route exact path='/' component={People} />
-          <Route path='/:person' component={Person} />
-          <div style={{ ...STYLES.fade, ...STYLES.fadeBottom }} />
-        </div>
-      </div>
-    </Router>
-  </Provider>
-);
+          <div style={STYLES.container}>
+            <div style={STYLES.contentWrapper}>
+              <div style={{ ...STYLES.fade, ...STYLES.fadeTop }} />
+              <Route exact path='/' component={People} />
+              <Route path='/:person' component={Person} />
+              <div style={{ ...STYLES.fade, ...STYLES.fadeBottom }} />
+            </div>
+          </div>
+        </ScrollToTop>
+      </Router>
+    </Provider>
+  );
+};
 
 Root.propTypes = {
   store: PropTypes.object.isRequired,

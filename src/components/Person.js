@@ -39,7 +39,7 @@ class Person extends Component {
           </li>
 
           <li style={STYLES.listItem}>
-            <NavLink exact to='/'>
+            <NavLink exact to='/' style={STYLES.link}>
               Back
             </NavLink>
           </li>
@@ -87,6 +87,7 @@ const STYLES = {
     alignItems: 'center',
     textAlign: 'center',
   },
+  link: { fontSize: '24px', lineHeight: '72px' },
   fade: {
     left: '0',
     height: '40vh',

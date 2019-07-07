@@ -53,7 +53,7 @@ class People extends Component {
           <li style={STYLES.listItem}>
             <NavLink
               to={`/${getUrlFriendlyPersonName(person.name)}`}
-              style={{ fontSize: '24px', lineHeight: '72px' }}
+              style={STYLES.link}
             >
               More details
             </NavLink>
@@ -115,6 +115,7 @@ const STYLES = {
     alignItems: 'center',
     justifyContent: 'center',
   },
+  link: { fontSize: '24px', lineHeight: '72px' },
   fade: {
     left: '0',
     height: '40vh',
